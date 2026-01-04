@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 10% 96%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 220 10% 96%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 24 100% 97%;
+    --accent-foreground: 24 95% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 24 95% 53%;
+
+    --radius: 0.75rem;
+
+    /* Custom Civic Sahayak tokens */
+    --civic-orange: 24 95% 53%;
+    --civic-orange-light: 24 100% 97%;
+    --civic-orange-dark: 24 95% 45%;
+    --civic-gray-50: 220 20% 98%;
+    --civic-gray-100: 220 15% 95%;
+    --civic-gray-200: 220 13% 91%;
+    --civic-gray-300: 220 12% 84%;
+    --civic-gray-400: 220 10% 60%;
+    --civic-gray-500: 220 10% 45%;
+    --civic-gray-600: 220 12% 30%;
+    --civic-gray-700: 220 15% 20%;
+    --civic-gray-800: 220 20% 12%;
+    --civic-gray-900: 220 25% 8%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 15% 20% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 15% 20% / 0.08), 0 2px 4px -2px hsl(220 15% 20% / 0.04);
+    --shadow-lg: 0 10px 15px -3px hsl(220 15% 20% / 0.08), 0 4px 6px -4px hsl(220 15% 20% / 0.04);
+    --shadow-xl: 0 20px 25px -5px hsl(220 15% 20% / 0.08), 0 8px 10px -6px hsl(220 15% 20% / 0.04);
+    --shadow-card: 0 1px 3px 0 hsl(220 15% 20% / 0.06), 0 1px 2px -1px hsl(220 15% 20% / 0.06);
+    --shadow-card-hover: 0 10px 20px -5px hsl(220 15% 20% / 0.1), 0 4px 6px -2px hsl(220 15% 20% / 0.05);
+
+    /* Animations */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 24 95% 53%;
+  }
+
+  .dark {
+    --background: 220 25% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 24 30% 15%;
+    --accent-foreground: 24 95% 60%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 24 95% 53%;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 15% 18%;
+    --sidebar-ring: 24 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  .civic-container {
+    @apply max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .civic-section {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .civic-card {
+    @apply bg-card rounded-2xl border border-border;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+  }
+
+  .civic-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .civic-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .civic-badge-primary {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .civic-gradient-text {
+    @apply bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .civic-glow {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.3);
+  }
+
+  .civic-border-glow {
+    @apply border-2 border-primary/20;
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.05);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+}
