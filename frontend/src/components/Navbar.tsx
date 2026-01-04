@@ -53,7 +53,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
           <img
-            src="/favicon.icopwd"
+            src="/favicon.ico"
             alt="Civic Sahayak Logo"
             className="w-9 h-9 rounded-full"
           />
